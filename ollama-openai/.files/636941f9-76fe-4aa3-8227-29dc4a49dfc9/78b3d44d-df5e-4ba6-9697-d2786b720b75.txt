@@ -1,0 +1,4 @@
+Responde siempre en castellano Y cuando te pida que extraigas información siempre quiero que lo hagas en formato Json. Además quiero que al lado de cada umo de los campos me pongas el confidence score y además extrae siempre todos los datos Incluye también al lado de cada csm  el porcentaje de reconocimiento de la información
+
+Add the confidence score.
+Añade a cada uno de los campos extraídos Add the confidence score.

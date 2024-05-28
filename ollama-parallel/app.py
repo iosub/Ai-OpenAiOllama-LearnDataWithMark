@@ -14,7 +14,7 @@ client = AsyncOpenAI(base_url="http://localhost:11434/v1", api_key="ignore-me")
 models = [
     m['name'] 
     for m in ollama.list()["models"]  
-    if m["details"]["family"] in ["llama", "gemma"]
+    if m["details"]["family"] in ["llama", "gemma","phi3"]
 ]
 
 with st.sidebar:

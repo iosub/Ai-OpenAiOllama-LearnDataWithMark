@@ -47,7 +47,7 @@ client = AsyncOpenAI(base_url="http://localhost:11434/v1", api_key="ignore-me")
 models = [
     m['name'] 
     for m in ollama.list()["models"]  
-    if m["details"]["family"] in ["llama", "gemma"]
+    if m["details"]["family"] in ["llama", "gemma","phi3"]
 ]
 
 def clear_everything():
@@ -94,11 +94,11 @@ async def run_prompt(placeholder, model, message_history):
         assistant = st.chat_message(name="assistant")
         # assistant.image("images/loading-gif.gif", width=25)
 
-        with open("images/loading-gif.gif", "rb") as file:
-            contents = file.read()
-            data_url = base64.b64encode(contents).decode("utf-8")
+        #with open("images/loading-gif.gif", "rb") as file:
+        #    contents = file.read()
+        #    data_url = base64.b64encode(contents).decode("utf-8")
 
-        assistant.markdown(f"<img src='data:image/gif;base64,{data_url}' class='spinner' width='25' />", unsafe_allow_html=True)
+        #assistant.markdown(f"<img src='data:image/gif;base64,{data_url}' class='spinner' width='25' />", unsafe_allow_html=True)
 
     messages = [
         {"role": "system", "content": "You are a helpful assistant."},

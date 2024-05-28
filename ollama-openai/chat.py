@@ -1,8 +1,11 @@
 import chainlit as cl
 from openai import AsyncOpenAI
+import os 
+from dotenv import load_dotenv 
+
+load_dotenv()
 
 client = AsyncOpenAI(
-  api_key="must-put-something-doesnt-matter-what",
   base_url="http://localhost:11434/v1"
 )
 
@@ -31,7 +34,7 @@ async def on_message(message: cl.Message):
   messages.append({"role": "user", "content": message.content})
 
   response = await client.chat.completions.create(
-    model="mixtral",
+    model="mistral",
     messages = messages,
     stream=True
   )
